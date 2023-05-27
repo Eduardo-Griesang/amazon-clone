@@ -1,3 +1,5 @@
+@import '../../index.css';
+
 header{
-    background: #0f171e;
+    background: var(--background);
 }

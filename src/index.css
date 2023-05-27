@@ -1,13 +1,12 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'AmazonEmberMedium';
+  src: local('AmazonEmberMedium') url('./fonts/Amazon-Ember-Medium.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --white: #FFFFFF;
+  --gray: #aaa;
+  --dark-gray: #333333;
+  --background: #00050d;
+  --font: 'AmazonEmberMedium';
 }
