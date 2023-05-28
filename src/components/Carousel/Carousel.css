@@ -1,0 +1,24 @@
+@import '../../index.css';
+
+.movie-banner{
+    height: 760px;
+    object-fit: cover;
+}
+
+.movie-info{
+    position: relative;
+}
+
+.movie-title{
+    position: absolute;
+    bottom: 520%;
+    right: 90%;
+    width: 15%;
+}
+
+.amazom-original{
+    position: absolute;
+    bottom: 750%;
+    right: 87%;
+    width: 19%;
+}

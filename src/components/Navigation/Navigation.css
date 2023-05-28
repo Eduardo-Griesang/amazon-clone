@@ -8,7 +8,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    padding: 1em;
+    padding: 0;
 }
 
 .navigation-ul{
@@ -37,7 +37,7 @@
 }
 
 .navigation-ul li span{
-    font-size: 1.4em;
+    font-size: 1.32em;
 }
 
 .navigation-user{
@@ -47,7 +47,7 @@
 }
 
 .navigation-user-search{
-    font-size: 1.4em;
+    font-size: 1.32em;
     margin-right: 2em;
     padding: 0.8em;
 }
@@ -72,7 +72,7 @@
 
 .navigation-user section span{
     color: var(--gray);
-    font-size: 1.4em;
+    font-size: 1.32em;
     font-weight: 500;
     margin-right: 1em;
 }
