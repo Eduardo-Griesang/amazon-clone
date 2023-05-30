@@ -5,10 +5,16 @@ import Carousel from '../../components/Carousel'
 
 const HomePage = () => {
     return(
-        <header>
-            <Navigation />
-            <Carousel />
-        </header>
+        <html>
+            <header>
+                <Navigation />
+                <Carousel />
+            </header>
+
+            <main>
+                
+            </main>
+        </html>
     )
 }
 

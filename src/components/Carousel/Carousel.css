@@ -2,7 +2,8 @@
 
 .movie-banner{
     height: 760px;
-    object-fit: cover;
+    
+    margin-right: 50px;
 }
 
 .movie-info{
@@ -11,14 +12,14 @@
 
 .movie-title{
     position: absolute;
-    bottom: 520%;
+    bottom: 820%;
     right: 90%;
     width: 15%;
 }
 
 .amazom-original{
     position: absolute;
-    bottom: 750%;
+    bottom: 1250%;
     right: 87%;
     width: 19%;
 }
