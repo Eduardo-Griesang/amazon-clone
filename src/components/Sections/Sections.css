@@ -1,0 +1,25 @@
+@import '../../index.css';
+
+.sec{
+    margin-left: 5vw;
+    margin-top: 2em;
+}
+
+.sec-title{
+    display: flex;
+    align-items: baseline;
+}
+
+.sec-title h2{
+    color: var(--blue);
+    font-size: 2em;
+    font-weight: 600;
+    margin-right: 0.7em;
+    margin-bottom: 0;
+}
+
+.sec-title span{
+    color: var(--white);
+    font-size: 1.8em;
+    font-weight: 600;
+}
