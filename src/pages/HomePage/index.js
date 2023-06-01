@@ -5,8 +5,19 @@ import Carousel from '../../components/Carousel'
 import Sections from '../../components/Sections'
 
 const HomePage = () => {
+
+    async function MoviesAPI() {
+        const allMovies = await fetch(`https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies-2020s.json`)
+        const allMoviesJSON = await allMovies.json()
+
+        const i = allMoviesJSON.filter(movie => movie.genres[0] === "Action")
+        console.log(i)
+        return allMoviesJSON
+    }
+
+    MoviesAPI()
     return(
-        <html>
+        <section className='html'>
             <header>
                 <Navigation />
                 <Carousel />
@@ -15,7 +26,7 @@ const HomePage = () => {
             <main>
                 <Sections />
             </main>
-        </html>
+        </section>
     )
 }
 
