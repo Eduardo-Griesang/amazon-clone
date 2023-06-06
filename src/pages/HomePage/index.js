@@ -3,22 +3,19 @@ import './HomePage.css'
 import Navigation from '../../components/Navigation'
 import Carousel from '../../components/Carousel'
 import Sections from '../../components/Sections'
+import { useState } from 'react'
 
 const HomePage = () => {
 
-    let name = ''
-    let img = ''
+    const [ API, setAPI] = useState([])
 
     async function MoviesAPI() {
         const allMovies = await fetch(`https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies-2020s.json`)
         const allMoviesJSON = await allMovies.json()
 
         const i = allMoviesJSON.filter(movie => movie.genres[0] === "Action")
-        
-        name = i[0].title;
-        img = i[0].thumbnail;
-
-        console.log(name, img)
+         
+        setAPI(i)
         return i
     }
     
@@ -32,7 +29,11 @@ const HomePage = () => {
             </header>
 
             <main>
-                <Sections name={name} img={img} />
+                {API.slice(0, 1).map(movie => {
+                    return(
+                        <Sections name={movie.title} img={movie.thumbnail} />
+                    )
+                })}
             </main>
         </section>
     )
