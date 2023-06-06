@@ -6,16 +6,24 @@ import Sections from '../../components/Sections'
 
 const HomePage = () => {
 
+    let name = ''
+    let img = ''
+
     async function MoviesAPI() {
         const allMovies = await fetch(`https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies-2020s.json`)
         const allMoviesJSON = await allMovies.json()
 
         const i = allMoviesJSON.filter(movie => movie.genres[0] === "Action")
-        console.log(i)
-        return allMoviesJSON
-    }
+        
+        name = i[0].title;
+        img = i[0].thumbnail;
 
+        console.log(name, img)
+        return i
+    }
+    
     MoviesAPI()
+
     return(
         <section className='html'>
             <header>
@@ -24,7 +32,7 @@ const HomePage = () => {
             </header>
 
             <main>
-                <Sections />
+                <Sections name={name} img={img} />
             </main>
         </section>
     )
