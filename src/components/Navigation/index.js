@@ -11,7 +11,13 @@ const Navigation = () => {
                 <img src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
     
                 <li>
-                    <span className='active'>Home</span>
+                        <span className='active home'>Home</span>
+                        <ul className='homeDropdown'>
+                            <li>All</li>
+                            <li>Movies</li>
+                            <li>TV shows</li>
+                            <li>Sports</li>
+                        </ul>
                 </li>
                 <li>
                     <span>Store</span>
