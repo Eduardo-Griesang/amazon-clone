@@ -29,11 +29,7 @@ const HomePage = () => {
             </header>
 
             <main>
-                {API.slice(0, 1).map(movie => {
-                    return(
-                        <Sections name={movie.title} img={movie.thumbnail} />
-                    )
-                })}
+                <Sections API={API}/>
             </main>
         </section>
     )
