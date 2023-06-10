@@ -1,4 +1,6 @@
 import './Carousel.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faCirclePlay, faCirclePlus, faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 
 const Carousel = () => {
     return(
@@ -12,8 +14,22 @@ const Carousel = () => {
                 <div class="carousel-item active">
                     <img class='d-block movie-banner' src="https://m.media-amazon.com/images/S/sonata-images-prod/SVOD_LATCANZ_Air_Launch_Concept_CS/69fec07f-e6ad-4de4-9955-a445c62f50fc._UR3840,1440_SX2160_FMwebp_.jpeg" alt="..."/>
                     <div class="carousel-caption d-none d-md-block movie-info">
+
                         <img className='amazom-original' src='https://m.media-amazon.com/images/S/pv-target-images/7e5ebe135ef7e9f912cf8c29b6c9f4e22cab8ff78c0584a45c129cc1df33336e._AC_SX500_FMwebp_.png' alt='...' />
                         <img className='movie-title' src='https://m.media-amazon.com/images/S/sonata-images-prod/SVOD_LATCANZ_Air_Launch_Concept_CS/b247eb5a-f4a9-4deb-858b-fd5c5e92ce5d._AC_SX500_FMwebp_.png' alt='...' />
+                        
+                        <div className='included-with-prime'>
+                            <FontAwesomeIcon icon={faCircleCheck} style={{"--fa-primary-color": "#000000", "--fa-primary-opacity": "0.9", "--fa-secondary-color": "#1a98ff", "--fa-secondary-opacity": "1",}} />
+                            <span>Included with Prime</span>
+                        </div>
+
+                        <div className='Play-prime'>
+                            <FontAwesomeIcon icon={faCirclePlay} size="2xl" style={{"--fa-primary-color": "#ffffff", "--fa-secondary-color": "#ffffff", "--fa-secondary-opacity": "0",}} className='Play-prime-icon-play' />
+                            <h1>Play</h1>
+
+                            <FontAwesomeIcon icon={faCirclePlus} style={{"--fa-primary-color": "#ffffff", "--fa-secondary-color": "#4f4f4f", "--fa-secondary-opacity": "1",}} className='Play-prime-icon' />
+                            <FontAwesomeIcon icon={faCircleInfo} style={{color: "#ffffff",}} className='Play-prime-icon' />
+                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
