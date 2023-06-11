@@ -3,12 +3,15 @@
 .sec{
     margin-left: 5vw;
     margin-top: 2em;
+    overflow: hidden;
+    position: relative;
 }
 
 .sec-title{
     display: flex;
     align-items: baseline;
     flex-direction: column;
+    position: relative;
 }
 
 .sec-title section{
@@ -29,15 +32,15 @@
 }
 
 .sec-movies{
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    padding: 20px 0 ;
-    align-items: center;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .item{
-    transition: 250ms all;
-    cursor: pointer;
+   flex: 0 0 10%;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   margin-right: 1.5em;
 }
 
 .item img {
@@ -45,5 +48,23 @@
     height: 200px;
     width: 290px;
     object-fit: cover;
-    margin-right: 1.5em;
+}
+
+.btn{
+    position: absolute;
+    top: 140px;
+    font-size: 2.3em;
+    transition: 0.7s;
+}
+
+.btn:hover{
+    transform: scale(1.5);
+}
+
+.next-btn{
+    right: 0;
+}
+
+.prev-btn{
+    left: 0;
 }
