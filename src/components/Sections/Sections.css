@@ -34,6 +34,7 @@
 .sec-movies{
     display: flex;
     transition: transform 0.5s ease-in-out;
+    scroll-behavior: smooth;
 }
 
 .item{
