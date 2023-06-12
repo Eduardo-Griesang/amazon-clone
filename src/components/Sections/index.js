@@ -7,12 +7,16 @@ const Sections = ({ API }) => {
 
     const gap = 16;
 
-    const carousel = document.querySelector(".sec-title")
-    const content = document.querySelector(".sec-movies")
-
+    
     function scroll (e) {
+        const carousel = e.target.parentNode.parentNode
+        const content = e.target.parentNode.parentNode
         const next = e.target.parentNode.childNodes[0]
         const prev = e.target.parentNode.childNodes[1]
+
+        console.log(carousel)
+        let width = carousel.offsetWidth;
+        window.addEventListener("resize", () => (width = carousel.offsetWidth));
 
         if (e.target.id === 'next') {
             carousel.scrollBy(width + gap, 0);
@@ -33,8 +37,6 @@ const Sections = ({ API }) => {
         }
     }
 
-    let width = '100vw';
-    window.addEventListener("resize", () => (width = carousel.offsetWidth));
 
     /* pega toda a lista de filmes e seleciona apenas os 10 primeiros, para ele não mostrar a lista completa */
     const filtered = API.slice(1, 10);
