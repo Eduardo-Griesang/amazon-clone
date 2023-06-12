@@ -9,29 +9,31 @@ const Sections = ({ API }) => {
 
     const carousel = document.querySelector(".sec-title")
     const content = document.querySelector(".sec-movies")
-    
-    function next (e) {
-        const next = e.target.id
-        carousel.scrollBy(width + gap, 0);
-        if (carousel.scrollWidth !== 0) {
-            prev.style.display = "flex";
-         }
-        if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-            next.style.display = "none";
+
+    function scroll (e) {
+        const next = e.target.parentNode.childNodes[0]
+        const prev = e.target.parentNode.childNodes[1]
+
+        if (e.target.id === 'next') {
+            carousel.scrollBy(width + gap, 0);
+            if (carousel.scrollWidth !== 0) {
+                prev.style.display = "flex";
+            }
+            if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+                next.style.display = "none";
+            }
+        } else{
+            carousel.scrollBy(-(width + gap), 0);
+            if (carousel.scrollLeft - width - gap <= 0) {
+                prev.style.display = "none";
+            }
+            if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+                next.style.display = "flex";
+            }
         }
     }
 
-    function prev () {
-        carousel.scrollBy(-(width + gap), 0);
-        if (carousel.scrollLeft - width - gap <= 0) {
-            prev.style.display = "none";
-        }
-        if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-            next.style.display = "flex";
-        }
-    }
-
-    let width = carousel.offsetWidth;
+    let width = '100vw';
     window.addEventListener("resize", () => (width = carousel.offsetWidth));
 
     /* pega toda a lista de filmes e seleciona apenas os 10 primeiros, para ele não mostrar a lista completa */
@@ -42,7 +44,7 @@ const Sections = ({ API }) => {
             <div className="sec-title">
 
                 <section>
-                    <h2 class="ola">Prime</h2> 
+                    <h2>Prime</h2> 
                     <span>Action Movies</span> 
                 </section>
 
@@ -55,9 +57,10 @@ const Sections = ({ API }) => {
                         )
                     })}
                 </section>
-
-                <FontAwesomeIcon className="next-btn btn" onClick={next} id="next" icon={faChevronRight} style={{color: "#ffffff",}} />
-                <FontAwesomeIcon className="prev-btn btn" onClick={prev} id="prev" icon={faChevronLeft} style={{color: "#ffffff",}} />
+                <section>
+                    <FontAwesomeIcon className="next-btn btn" onClick={scroll} id="next" icon={faChevronRight} style={{color: "#ffffff",}} />
+                    <FontAwesomeIcon className="prev-btn btn" onClick={scroll} id="prev" icon={faChevronLeft} style={{color: "#ffffff",}} />
+                </section>
             </div>
         </section>
     )
