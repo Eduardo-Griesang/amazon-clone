@@ -34,21 +34,24 @@
 
 .sec-movies{
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    scroll-behavior: smooth;
+    gap: 15px;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.sec-movies::-webkit-scrollbar{
+    width: 0;
 }
 
 .item{
-    display: grid;
-    grid-gap: 16px;
-    grid-auto-flow: column;
+    display: flex;
     margin: auto;
     box-sizing: border-box;
 }
 
 .item img {
+    flex: 0 0 auto;
     border-radius: 10px;
-    margin-right: 1em;
     height: 200px;
     width: 290px;
     object-fit: cover;
