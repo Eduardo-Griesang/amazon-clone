@@ -29,6 +29,23 @@ const Navigation = () => {
                 </li>
                 <li>
                     <span className='navigation-item'>Categories</span>
+                    <ul className='navigation-item-Dropdown'>
+                        <li>Genres</li>
+                        <ul>
+                            <li>Action and Adventure</li>
+                            <li>Anime</li>
+                            <li>Comedy</li>
+                            <li>Documentary</li>
+                            <li>Drama</li>
+                            <li>Fantasy</li>
+                            <li>Horror</li>
+                            <li>International</li>
+                            <li>Kids</li>
+                            <li>Music videos and concerts</li>
+                            <li>Mystery and thrillers</li>
+                            <li>Romance</li>
+                        </ul>
+                    </ul>
                 </li>
                 <li>
                     <span className='navigation-item'>My stuff</span>
