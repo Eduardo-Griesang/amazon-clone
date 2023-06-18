@@ -29,8 +29,8 @@ const Navigation = () => {
                 </li>
                 <li>
                     <span className='navigation-item'>Categories</span>
-                    <ul className='navigation-item-Dropdown'>
-                        <li>Genres</li>
+                    <ul className='navigation-item-Dropdown bigger'>
+                        <h4>Genres</h4>
                         <ul>
                             <li>Action and Adventure</li>
                             <li>Anime</li>

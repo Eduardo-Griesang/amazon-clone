@@ -107,6 +107,28 @@
     z-index: 99999;
 }
 
+.bigger{
+    left: -170%;
+    padding: 0.5em;
+    width: 500%;
+}
+
+.bigger h4{
+    color: var(--white);
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.bigger ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bigger ul li:hover{
+    border-radius: 20px;
+    width: 80%;
+}
+
 .navigation-item:hover + .navigation-item-Dropdown{
     display: flex;
 }
