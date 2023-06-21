@@ -23,7 +23,6 @@
 
 .navigation-ul li{
     box-sizing: border-box;
-    padding: 1em 0.1em;
     position: relative;
 }
 
@@ -84,9 +83,23 @@
     width: 32%;
 }
 
+.icon-down{
+    padding-right: 0.7em;
+    padding-left: 0.7em;
+}
+
+.navigation-item-wrapper:hover{
+    .icon-down{
+        rotate: 180deg;
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        transition: 0.4s;
+    }
+}
+
 /* DROPDOWNS */
 
-.navigation-item{
+.navigation-item-wrapper{
     padding: 1em;
 }
 
@@ -129,7 +142,7 @@
     width: 80%;
 }
 
-.navigation-item:hover + .navigation-item-Dropdown{
+.navigation-item-wrapper:hover + .navigation-item-Dropdown{
     display: flex;
 }
 
@@ -139,6 +152,7 @@
 
 .navigation-item-Dropdown li{
     padding-left: 0.3em;
+    padding: 1em 0.5em;
 }
 
 .navigation-item-Dropdown li:hover{

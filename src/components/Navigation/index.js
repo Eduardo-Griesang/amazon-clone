@@ -2,6 +2,7 @@ import './Navigation.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => {
     return (
@@ -11,7 +12,10 @@ const Navigation = () => {
                 <img src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
     
                 <li>
-                    <span className='active navigation-item'>Home</span>
+                    <div className='navigation-item-wrapper active'>
+                        <span className='navigation-item'>Home</span>
+                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
+                    </div>
                     <ul className='navigation-item-Dropdown'>
                         <li>All</li>
                         <li>Movies</li>
@@ -20,7 +24,10 @@ const Navigation = () => {
                     </ul>
                 </li>
                 <li>
-                    <span className='navigation-item'>Store</span>
+                    <div className='navigation-item-wrapper'>
+                        <span className='navigation-item'>Store</span>
+                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
+                    </div>
                     <ul className='navigation-item-Dropdown'>
                         <li>All</li>
                         <li>Rent</li>
@@ -28,7 +35,10 @@ const Navigation = () => {
                     </ul>
                 </li>
                 <li>
-                    <span className='navigation-item'>Categories</span>
+                    <div className='navigation-item-wrapper'>
+                        <span className='navigation-item'>Categories</span>
+                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
+                    </div>
                     <ul className='navigation-item-Dropdown bigger'>
                         <h4>Genres</h4>
                         <ul>
@@ -48,7 +58,10 @@ const Navigation = () => {
                     </ul>
                 </li>
                 <li>
-                    <span className='navigation-item'>My stuff</span>
+                    <div className='navigation-item-wrapper'>
+                        <span className='navigation-item'>My stuff</span>
+                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
+                    </div>
                     <ul className='navigation-item-Dropdown'>
                         <li>All</li>
                         <li>Watchlist</li>
