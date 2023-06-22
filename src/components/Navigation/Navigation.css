@@ -6,16 +6,17 @@
 
 .navigation{
     align-items: center;
+    background: var(--background);
     display: flex;
     justify-content: center;
     padding: 0;
 }
 
 .navigation-ul{
-    color: var(--gray);
-    font-weight: 500;
     align-items: center;
+    color: var(--gray);
     display: flex;
+    font-weight: 500;
     list-style-type: none;
     margin-bottom: 0;
     padding: 0;
@@ -28,13 +29,13 @@
 
 .navigation-ul li:hover{
     color: var(--white);
-    background-color: var(--dark-gray);
     cursor: pointer;
+    background-color: var(--dark-gray);
 }
 
 .navigation-ul img{
-    width: 15%;
     margin-right: 3em;
+    width: 15%;
 }
 
 .navigation-ul li span{
@@ -42,8 +43,8 @@
 }
 
 .navigation-user{
-    display: flex;
     align-items: center;
+    display: flex;
     flex-grow: 0;
 }
 
@@ -59,9 +60,9 @@
 }
 
 .navigation-user section{
-    display: flex;
     align-items: center;
     box-sizing: border-box;
+    display: flex;
     padding: 0.6em;
     max-width: 150px;
 }
@@ -86,6 +87,7 @@
 .icon-down{
     padding-right: 0.7em;
     padding-left: 0.7em;
+    transition: 0.2s;
 }
 
 .navigation-item-wrapper:hover{
@@ -93,7 +95,7 @@
         rotate: 180deg;
         padding-left: 0.7em;
         padding-right: 0.7em;
-        transition: 0.4s;
+        transition: 0.2s;
     }
 }
 
