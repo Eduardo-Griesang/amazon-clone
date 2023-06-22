@@ -4,36 +4,51 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
+import NavigationItem from '../NavigationItem'
+
 const Navigation = () => {
+
+    const home = [
+        "All",
+        "Movies",
+        "TV shows",
+        "Sports"
+    ]
+    const store = [
+        "All",
+        "Rent",
+        "Channels"
+    ]
+    const myStuff = [
+        "All",
+        "Watchlist",
+        "Rentals"
+    ]
+    const categories = [
+        "Action and Adventure",
+        "Anime",
+        "Comedy",
+        "Documentary",
+        "Drama",
+        "Fantasy",
+        "Horror",
+        "International",
+        "Kids",
+        "Music videos and concerts",
+        "Mystery and thrillers",
+        "Romance"
+    ]
+
     return (
         <nav className='navigation'>
             <ul className='navigation-ul'>
                 
                 <img src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
-    
-                <li>
-                    <div className='navigation-item-wrapper active'>
-                        <span className='navigation-item'>Home</span>
-                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
-                    </div>
-                    <ul className='navigation-item-Dropdown'>
-                        <li>All</li>
-                        <li>Movies</li>
-                        <li>TV shows</li>
-                        <li>Sports</li>
-                    </ul>
-                </li>
-                <li>
-                    <div className='navigation-item-wrapper'>
-                        <span className='navigation-item'>Store</span>
-                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
-                    </div>
-                    <ul className='navigation-item-Dropdown'>
-                        <li>All</li>
-                        <li>Rent</li>
-                        <li>Channels</li>
-                    </ul>
-                </li>
+
+                <NavigationItem active={true} title={"Home"} dropdown={home}/>
+
+                <NavigationItem title={"Store"} dropdown={store}/>
+
                 <li>
                     <div className='navigation-item-wrapper'>
                         <span className='navigation-item'>Categories</span>
@@ -42,7 +57,7 @@ const Navigation = () => {
                     <ul className='navigation-item-Dropdown bigger'>
                         <h4>Genres</h4>
                         <ul>
-                            <li>Action and Adventure</li>
+                            <li></li>
                             <li>Anime</li>
                             <li>Comedy</li>
                             <li>Documentary</li>
@@ -51,23 +66,15 @@ const Navigation = () => {
                             <li>Horror</li>
                             <li>International</li>
                             <li>Kids</li>
-                            <li>Music videos and concerts</li>
-                            <li>Mystery and thrillers</li>
+                            <li></li>
+                            <li></li>
                             <li>Romance</li>
                         </ul>
                     </ul>
                 </li>
-                <li>
-                    <div className='navigation-item-wrapper'>
-                        <span className='navigation-item'>My stuff</span>
-                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
-                    </div>
-                    <ul className='navigation-item-Dropdown'>
-                        <li>All</li>
-                        <li>Watchlist</li>
-                        <li>Rentals</li>
-                    </ul>
-                </li>
+
+                <NavigationItem title={"My stuff"} dropdown={myStuff}/>
+                
             </ul>
             <section className='navigation-user'>
                 <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#aaa",}} className='navigation-user-search' />
