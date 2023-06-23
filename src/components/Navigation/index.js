@@ -45,9 +45,11 @@ const Navigation = () => {
                 
                 <img src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
 
-                <NavigationItem active={true} title={"Home"} dropdown={home}/>
+                <NavigationItem active={true} title={"Home"} dropdown={home} />
 
-                <NavigationItem title={"Store"} dropdown={store}/>
+                <NavigationItem title={"Store"} dropdown={store} />
+
+                <NavigationItem title={"Categories"} dropdown={categories} big={true} secTitle={"Genres"} />
 
                 <li>
                     <div className='navigation-item-wrapper'>
@@ -73,7 +75,7 @@ const Navigation = () => {
                     </ul>
                 </li>
 
-                <NavigationItem title={"My stuff"} dropdown={myStuff}/>
+                <NavigationItem title={"My stuff"} dropdown={myStuff} />
                 
             </ul>
             <section className='navigation-user'>
