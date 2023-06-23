@@ -2,7 +2,6 @@ import './Navigation.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 import NavigationItem from '../NavigationItem'
 
@@ -50,30 +49,6 @@ const Navigation = () => {
                 <NavigationItem title={"Store"} dropdown={store} />
 
                 <NavigationItem title={"Categories"} dropdown={categories} big={true} secTitle={"Genres"} />
-
-                <li>
-                    <div className='navigation-item-wrapper'>
-                        <span className='navigation-item'>Categories</span>
-                        <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
-                    </div>
-                    <ul className='navigation-item-Dropdown bigger'>
-                        <h4>Genres</h4>
-                        <ul>
-                            <li></li>
-                            <li>Anime</li>
-                            <li>Comedy</li>
-                            <li>Documentary</li>
-                            <li>Drama</li>
-                            <li>Fantasy</li>
-                            <li>Horror</li>
-                            <li>International</li>
-                            <li>Kids</li>
-                            <li></li>
-                            <li></li>
-                            <li>Romance</li>
-                        </ul>
-                    </ul>
-                </li>
 
                 <NavigationItem title={"My stuff"} dropdown={myStuff} />
                 

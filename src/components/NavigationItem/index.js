@@ -26,11 +26,27 @@ const NavigationItem = ( { active, title, dropdown, big, secTitle } ) => {
                 <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
             </div>
             <ul className={`navigation-item-Dropdown ${bigger()}`}>
-                {dropdown.map(i => {
-                    return(
-                        <li>{i}</li>
-                    ) 
-                })}
+                {bigger() ?
+                    <>
+                        <h4>Genres</h4>
+                        <ul>
+                            {dropdown.map(i => {
+                                return(
+                                    <li>{i}</li>
+                                ) 
+                            })}
+                        </ul>
+                    </> 
+                : <>
+                    {dropdown.map(i => {
+                        return(
+                            <li>{i}</li>
+                        ) 
+                    })}
+                  </> 
+                
+                }
+                
             </ul>
         </li>
     )
