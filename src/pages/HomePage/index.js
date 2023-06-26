@@ -12,11 +12,9 @@ const HomePage = () => {
     async function MoviesAPI() {
         const allMovies = await fetch(`https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies-2020s.json`)
         const allMoviesJSON = await allMovies.json()
-
-        const i = allMoviesJSON.filter(movie => movie.genres[0] === "Action")
          
-        setAPI(i)
-        return i
+        setAPI(allMoviesJSON)
+        return allMoviesJSON
     }
     
     MoviesAPI()
@@ -29,7 +27,10 @@ const HomePage = () => {
             </header>
 
             <main>
-                <Sections API={API}/>
+                <Sections API={API} genreFilter={"Action"} />
+                <Sections API={API} genreFilter={"Horror"} />
+                <Sections API={API} genreFilter={"Comedy"} />
+                <Sections API={API} genreFilter={"Superhero"} />
             </main>
         </section>
     )

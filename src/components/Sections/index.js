@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 
-const Sections = ({ API }) => {
+const Sections = ({ API, genreFilter }) => {
 
     const secMoviesRef = useRef()
 
@@ -34,8 +34,10 @@ const Sections = ({ API }) => {
         }
     }
 
-    /* pega toda a lista de filmes e seleciona apenas os 10 primeiros, para ele não mostrar a lista completa */
-    const filtered = API.slice(1, 15);
+    /* faz o filtro da API com o genero de filmes da seção */
+    const i = API.filter(movie => movie.genres[0] === genreFilter)
+    /* pega toda a lista de filmes e seleciona apenas os 15 primeiros, para ele não mostrar a lista completa */
+    const filtered = i.slice(1, 15);
     
     return(
         <section className="sec">
@@ -43,7 +45,7 @@ const Sections = ({ API }) => {
 
                 <section>
                     <h2>Prime</h2> 
-                    <span>Action Movies</span> 
+                    <span>{genreFilter} movies</span> 
                 </section>
 
                 <div className="sec-movies" ref={secMoviesRef}>

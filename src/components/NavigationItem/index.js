@@ -28,7 +28,7 @@ const NavigationItem = ( { active, title, dropdown, big, secTitle } ) => {
             <ul className={`navigation-item-Dropdown ${bigger()}`}>
                 {bigger() ?
                     <>
-                        <h4>Genres</h4>
+                        <h4>{secTitle}</h4>
                         <ul>
                             {dropdown.map(i => {
                                 return(

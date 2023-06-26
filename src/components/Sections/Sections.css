@@ -34,7 +34,7 @@
 
 .sec-movies{
     display: flex;
-    gap: 15px;
+    gap: 25px;
     overflow-x: auto;
     width: 100%;
 }

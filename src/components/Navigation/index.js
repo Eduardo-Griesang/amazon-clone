@@ -100,12 +100,18 @@ const Navigation = () => {
                     </form>
                 </div>
 
-                <section>
-                    <span>User</span>
+                <section className='navigation-item-wrapper'>
+                    <span className='navigation-item'>User</span>
                     <img src='https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png' alt='User logo' />
+
+                    <ul className='navigation-item-Dropdown'>
+                        {account.map(i => {
+                            return (
+                                <li>{i}</li>
+                            )
+                        })}
+                    </ul>
                 </section>
-                
-                <NavigationItem title={"Your account"} dropdown={account} />
             </section>
         </nav>
     )
