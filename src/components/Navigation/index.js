@@ -43,6 +43,18 @@ const Navigation = () => {
         "Mystery and thrillers",
         "Romance"
     ]
+    const account = [
+        "Help",
+        "Watch Anywhere",
+        "Account & Settings",
+        "Prime Benefits",
+        "Log out",
+
+        "Kids",
+        "Add new",
+        "Manage profiles",
+        "Learn more"
+    ]
 
     function toggleSearch() {
         const nav = ref.current
@@ -92,6 +104,8 @@ const Navigation = () => {
                     <span>User</span>
                     <img src='https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png' alt='User logo' />
                 </section>
+                
+                <NavigationItem title={"Your account"} dropdown={account} />
             </section>
         </nav>
     )
