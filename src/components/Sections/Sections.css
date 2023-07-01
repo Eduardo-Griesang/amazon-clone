@@ -36,11 +36,12 @@
     display: flex;
     gap: 25px;
     overflow-x: auto;
+    scroll-behavior: smooth;
     width: 100%;
 }
 
 .sec-movies::-webkit-scrollbar{
-    width: 0;
+    display: none;
 }
 
 .item{

@@ -8,30 +8,16 @@ const Sections = ({ API, genreFilter }) => {
 
     const secMoviesRef = useRef()
 
-    const gap = 16;
-    
-    function scroll (e) {
-        const carousel = e.target.parentNode.parentNode
-        const content = e.target.parentNode.parentNodes
-        const next = e.target.parentNode.childNodes[0]
-        const prev = e.target.parentNode.childNodes[1]
+    function scrollRight (e) {
+        /* pega o pai dos elementos a serem escrolados, e adiciona o "offsetWidth"(tamanho da tela visivel) a posição do scroll,
+        lembrando que o elemento precisa ter "overflow-x= auto" no css para funcionar */
+        secMoviesRef.current.scrollLeft += secMoviesRef.current.offsetWidth
+    }
 
-        console.log(carousel.offsetLeft)
-        let width = carousel.offsetWidth;
-        window.addEventListener("resize", () => (width = carousel.offsetWidth));
-
-        if (e.target.id === 'next') {
-            const firstMovie = secMoviesRef.current.firstChild.offsetLeft
-            console.log(firstMovie)
-        } else{
-            carousel.scrollBy(-(width + gap), 0);
-            if (carousel.scrollLeft - width - gap <= 0) {
-                prev.style.display = "none";
-            }
-            if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
-                next.style.display = "flex";
-            }
-        }
+    function scrollLeft (e) {
+        /* pega o pai dos elementos a serem escrolados, e reduz o "offsetWidth"(tamanho da tela visivel) a posição do scroll,
+        lembrando que o elemento precisa ter "overflow-x= auto" no css para funcionar */
+        secMoviesRef.current.scrollLeft -= secMoviesRef.current.offsetWidth
     }
 
     /* faz o filtro da API com o genero de filmes da seção */
@@ -58,8 +44,8 @@ const Sections = ({ API, genreFilter }) => {
                     })}
                 </div>
                 <section>
-                    <FontAwesomeIcon className="next-btn btn" onClick={scroll} id="next" icon={faChevronRight} style={{color: "#ffffff",}} />
-                    <FontAwesomeIcon className="prev-btn btn" onClick={scroll} id="prev" icon={faChevronLeft} style={{color: "#ffffff",}} />
+                    <FontAwesomeIcon className="next-btn btn" onClick={scrollRight} id="next" icon={faChevronRight} style={{color: "#ffffff",}} />
+                    <FontAwesomeIcon className="prev-btn btn" onClick={scrollLeft} id="prev" icon={faChevronLeft} style={{color: "#ffffff",}} />
                 </section>
             </div>
         </section>
