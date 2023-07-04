@@ -25,6 +25,13 @@ const Sections = ({ API, genreFilter }) => {
     const i = API.filter(movie => movie.genres[0] === genreFilter)
     /* pega toda a lista de filmes e seleciona apenas os 15 primeiros, para ele não mostrar a lista completa */
     const filtered = i.slice(1, 15);
+
+    /* pega o resumo do filme (movie.extract), e usa o método 'substring' que pega os caracteres de uma string dentro determinado range,
+    e adiciona (...) */
+    function aboutTheMovie (movie) {
+        const movieResume = movie.extract.substring(0, 110);
+        return movieResume + "..."
+    }
     
     return(
         <section className="sec">
@@ -43,10 +50,10 @@ const Sections = ({ API, genreFilter }) => {
                                     <img className="item-img" src={movie.thumbnail} alt={movie.title}/>
                                 </div>
 
-                                <div className="information-onHover"> 
-                                    <PlayPrime />
+                                <div className="information-onHover">
+                                    <PlayPrime /> 
                                     <h3>{movie.title}</h3>
-                                    <h6>{movie.extract}</h6>
+                                    <h6>{aboutTheMovie(movie)}</h6>
                                 </div>
                             </div>
                             
