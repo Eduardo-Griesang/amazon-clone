@@ -65,7 +65,16 @@
 }
 
 .information-onHover{
+    display: none;
     position: absolute;
+}
+
+.item:hover + .information-onHover{
+    display: flex;
+}
+
+.information-onHover{
+    display: flex;
 }
 
 .item:hover{
