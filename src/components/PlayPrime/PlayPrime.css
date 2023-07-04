@@ -1,0 +1,42 @@
+.included-with-prime{
+    font-size: 1.5em;
+    font-weight: 700;
+    left: 0px;
+    width: 40%;
+}
+
+.included-with-prime span{
+    margin-left: 0.8em;
+}
+
+.Play-prime{
+    display: flex;
+    align-items: center;
+    left: -10px;
+}
+
+.Play-prime-icon-play{
+    font-size: 5em;
+    margin-right: 0.2em;
+    transition: 0.2s all;
+    z-index: 3;
+}
+
+.Play-prime-icon-play:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.Play-prime-icon:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.Play-prime h1{
+    margin-right: 0.5em;
+}
+
+.Play-prime-icon{
+    font-size: 2em;
+    margin: 0 0.2em;
+}
