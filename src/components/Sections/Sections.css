@@ -36,6 +36,7 @@
     display: flex;
     gap: 25px;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     width: 100%;
 }
@@ -44,13 +45,17 @@
     display: none;
 }
 
+.movie-wrapper{
+    position: relative;
+}
+
 .item{
     display: flex;
     margin: auto;
     box-sizing: border-box;
 }
 
-.item img {
+.item-img {
     flex: 0 0 auto;
     border-radius: 10px;
     height: 200px;
@@ -59,11 +64,25 @@
     pointer-events: none;
 }
 
+.information-onHover{
+    position: absolute;
+}
+
+.item:hover{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform: scale(1.2);
+    transition: 0.4s ease-in-out;
+    z-index: 2;
+    cursor: pointer;
+}
+
 .btn{
     position: absolute;
     top: 140px;
     font-size: 2.3em;
     transition: 0.7s;
+    z-index: 999;
 }
 
 .btn:hover{

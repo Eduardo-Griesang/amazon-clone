@@ -3,6 +3,7 @@ import "./Sections.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
+import PlayPrime from "../PlayPrime";
 
 const Sections = ({ API, genreFilter }) => {
 
@@ -37,9 +38,18 @@ const Sections = ({ API, genreFilter }) => {
                 <div className="sec-movies" ref={secMoviesRef}>
                     {filtered.map(movie => {
                         return(
-                            <div className="item">
-                                <img src={movie.thumbnail} alt={movie.title}/>
+                            <div className="movie-wrapper">
+                                <div className="item">
+                                    <img className="item-img" src={movie.thumbnail} alt={movie.title}/>
+                                </div>
+
+                                <div className="information-onHover"> 
+                                    <PlayPrime />
+                                    <h3>{movie.title}</h3>
+                                    <h6>{movie.extract}</h6>
+                                </div>
                             </div>
+                            
                         )
                     })}
                 </div>
