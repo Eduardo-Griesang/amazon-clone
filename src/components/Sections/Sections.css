@@ -53,12 +53,14 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform: scale(1.2);
-    transition: 0.4s ease-in-out;
+    transition: 0.2s ease-in-out;
     z-index: 2;
     cursor: pointer;
 }
 
 .item:hover + .information-onHover{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
     display: flex;
 }
 
@@ -77,22 +79,25 @@
     border-bottom-right-radius: 10px;
     display: none;
     flex-direction: column;
-    height: 220px;
+    height: 200px;
     padding: 1em;
     position: absolute;
     top: 250px;
-    transform: scale(1.2);
+    transform: scale(1);
     width: 290px;
     z-index: 999999999;
 }
 
 .information-onHover:hover{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
     display: flex;
 }
 
 .information-onHover h3{
     color: var(--white);
     font-size: 1em;
+    margin-top: 1em;
 }
 
 .information-onHover h6{

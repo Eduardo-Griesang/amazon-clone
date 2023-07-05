@@ -9,6 +9,15 @@
     margin-left: 0.8em;
 }
 
+.play{
+    display: flex;
+    align-items: center;
+}
+
+.more{
+    display: flex;
+}
+
 .Play-prime{
     display: flex;
     align-items: center;
@@ -39,4 +48,39 @@
 .Play-prime-icon{
     font-size: 2em;
     margin: 0 0.2em;
+}
+
+/* small (dentro dos filmes) */
+
+.small{
+    font-size: 0.5em;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.small .play{
+    margin-top: 1em;
+}
+
+.small .icon-badge{
+    font-size: 2em;
+}
+
+.small span{
+    margin-left: 0.5em;
+}
+
+.small .Play-prime-icon-play{
+    font-size: 5.5em;
+    color: var(--white);
+}
+
+.small h1{
+    color: var(--white);
+    font-size: 4em;
+}
+
+.small .Play-prime-icon{
+    color: var(--white);
+    font-size: 3.5em;
 }

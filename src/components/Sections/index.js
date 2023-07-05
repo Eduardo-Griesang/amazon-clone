@@ -51,7 +51,7 @@ const Sections = ({ API, genreFilter }) => {
                                 </div>
 
                                 <div className="information-onHover">
-                                    <PlayPrime /> 
+                                    <PlayPrime small={true}/> 
                                     <h3>{movie.title}</h3>
                                     <h6>{aboutTheMovie(movie)}</h6>
                                 </div>
