@@ -1,5 +1,5 @@
 .included-with-prime{
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 700;
     left: 0px;
     width: 40%;
@@ -25,7 +25,7 @@
 }
 
 .Play-prime-icon-play{
-    font-size: 5em;
+    font-size: 5.5em;
     margin-right: 0.2em;
     transition: 0.2s all;
     z-index: 3;
@@ -46,7 +46,7 @@
 }
 
 .Play-prime-icon{
-    font-size: 2em;
+    font-size: 2.3em;
     margin: 0 0.2em;
 }
 
@@ -87,33 +87,39 @@
 
 /* responsiveness */
 
+@media screen and (max-width: 1110px) {
+    .included-with-prime{
+        font-size: 1.5em;
+    }
+}
+
 @media screen and (max-width: 1085px) {
     .included-with-prime{
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     .Play-prime-icon-play{
-        font-size: 4em;
+        font-size: 4.5em;
     }
     .Play-prime h1{
-        font-size: 2em;
+        font-size: 2.2em;
     }
     .Play-prime-icon{
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 }
 
 @media screen and (max-width: 900px) {
     .included-with-prime{
-        font-size: 1em;
+        font-size: 1.1em;
     }
     .Play-prime-icon-play{
-        font-size: 3.5em;
+        font-size: 3.7em;
     }
     .Play-prime h1{
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
     .Play-prime-icon{
-        font-size: 1em;
+        font-size: 1.2em;
     }
 }
 

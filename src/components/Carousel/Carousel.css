@@ -17,18 +17,18 @@
     position: absolute;
     gap: 50px;
     top: 10%;
-    left: 20%;
+    left: 16%;
     width: 50%;
 }
 
 .movie-title{
     left: 0px;
-    width: 35%;
+    width: 37%;
 }
 
 .amazom-original{
     left: 0px;
-    width: 45%;
+    width: 47%;
 }
     
 .indicators{
