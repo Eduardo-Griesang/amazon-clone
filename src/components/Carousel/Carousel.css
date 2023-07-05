@@ -17,7 +17,7 @@
     position: absolute;
     gap: 50px;
     top: 10%;
-    left: 250px;
+    left: 20%;
     width: 50%;
 }
 
@@ -35,6 +35,55 @@
     border-radius: 100%;
     height: 8px !important;
     width: 8px !important;
+}
+
+@media screen and (max-width: 1500px) {
+    .datails-movie{
+        gap: 40px;
+        width: 60%;
+        top: 7%;
+        left: 15%;
+    }
+    .movie-title{
+        width: 30%;
+    }
+    .amazom-original{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .datails-movie{
+        gap: 30px;
+        width: 65%;
+        top: 7%;
+    }
+    .movie-title{
+        width: 30%;
+    }
+    .amazom-original{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1085px) {
+    .datails-movie{
+        gap: 25px;
+        width: 70%;
+        top: 10%;
+    }
+    .movie-title{
+        width: 25%;
+    }
+    .amazom-original{
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .datails-movie{
+        gap: 20px;
+    }
 }
 
 @media screen and (max-width: 768px) {

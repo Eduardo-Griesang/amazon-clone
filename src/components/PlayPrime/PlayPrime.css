@@ -84,3 +84,41 @@
     color: var(--white);
     font-size: 3.5em;
 }
+
+/* responsiveness */
+
+@media screen and (max-width: 1085px) {
+    .included-with-prime{
+        font-size: 1.2em;
+    }
+    .Play-prime-icon-play{
+        font-size: 4em;
+    }
+    .Play-prime h1{
+        font-size: 2em;
+    }
+    .Play-prime-icon{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .included-with-prime{
+        font-size: 1em;
+    }
+    .Play-prime-icon-play{
+        font-size: 3.5em;
+    }
+    .Play-prime h1{
+        font-size: 1.5em;
+    }
+    .Play-prime-icon{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .datails-movie{
+        display: none;
+    }
+}
