@@ -8,7 +8,8 @@ import { useRef, useState } from 'react'
 
 const Navigation = () => {
 
-    const ref = useRef()
+    const navUl = useRef()
+    const navUser = useRef()
     const wrapper = useRef()
 
     const [ display, setDisplay ] = useState('none')
@@ -57,16 +58,23 @@ const Navigation = () => {
     ]
 
     function toggleSearch() {
-        const nav = ref.current
-        const wrap = wrapper.current
+        const nav = getComputedStyle(navUser.current)
+        const van = getComputedStyle(navUl.current)
+        
+        const navTrim = parseFloat(nav.width.slice(0, -2))
+        const vanTrim = parseFloat(van.width.slice(0, -2))
 
-        console.log(nav.innerWidth)
+        const holeWidth = navTrim + vanTrim
+
+        console.log(holeWidth.toString())
+        
+        const wrap = wrapper.current
 
         /* se o display for 'none' ele transforma o useState() em 'flex' mostrando o elemento na tela  */
         if(display === 'none'){
             setDisplay('flex')
             wrap.style.display = (display)
-            wrap.style.width = (nav.innerWidth)
+            wrap.style.width = (holeWidth.toString() + "px")
         } 
         /* se o display for 'flex' ele transforma o useState() em 'none' escondendo o elemento */
         else{
@@ -76,9 +84,9 @@ const Navigation = () => {
     }
 
     return (
-        <nav className='navigation' ref={ref}>
-
-            <ul className='navigation-ul'>
+        <nav className='navigation'>
+            
+            <ul className='navigation-ul' ref={navUl}>
                 <img src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
 
                 <NavigationItem active={true} title={"Home"} dropdown={home} />
@@ -90,13 +98,15 @@ const Navigation = () => {
                 <NavigationItem title={"My stuff"} dropdown={myStuff} />
             </ul>
 
-            <section className='navigation-user' onClick={toggleSearch}>
+            <section className='navigation-user' onClick={toggleSearch} ref={navUser} >
                 <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#aaa",}} className='navigation-user-search' />
 
                 <div className='navigation-user-search-wrapper' ref={wrapper}>
                     <form className='navigation-user-search-bar'>
+                        
                         <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#aaa",}} className='navigation-user-inside-search' />
                         <input type='search' placeholder='Search' />
+                    
                     </form>
                 </div>
 
