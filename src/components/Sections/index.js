@@ -38,7 +38,9 @@ const Sections = ({ API, genreFilter }) => {
     function whereToHover () {
         const where = MOVIE.current.getBoundingClientRect()
         const whereInt = parseInt(where.right)
-        movieHover.current.right = `-${whereInt}px`
+        
+        const movHov = getComputedStyle(movieHover.current)
+        movHov.right = `-${whereInt}px`
     }
     
     return(
