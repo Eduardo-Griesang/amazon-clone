@@ -8,8 +8,6 @@ import PlayPrime from "../PlayPrime";
 const Sections = ({ API, genreFilter }) => {
 
     const secMoviesRef = useRef()
-    const movieHover = useRef()
-    const MOVIE = useRef()
 
     function scrollRight (e) {
         /* pega o pai dos elementos a serem escrolados, e adiciona o "offsetWidth"(tamanho da tela visivel) a posição do scroll,
@@ -35,12 +33,16 @@ const Sections = ({ API, genreFilter }) => {
         return movieResume + "..."
     }
 
-    function whereToHover () {
-        const where = MOVIE.current.getBoundingClientRect()
-        const whereInt = parseInt(where.right)
-        
-        const movHov = getComputedStyle(movieHover.current)
-        movHov.right = `-${whereInt}px`
+    /* ao fazer o hover de algum filme essa função é chamada para calcular onde a parte que fala sobre o filme deveria ficar */
+    function whereToHover (e) {
+        /* posição do filme em relação ao carousel de filmes */
+        const positionMovie = e.target.offsetLeft
+
+        /* calcula onde o filme está, subtraindo a possição do filme, com a atual posição do scrollLeft  */
+        const calc = positionMovie - secMoviesRef.current.scrollLeft
+
+        /* adiciona o calculo a posição "left" do 'information-onHover' */
+        e.target.parentNode.lastChild.style.left = `${calc}px`
     }
     
     return(
@@ -52,15 +54,15 @@ const Sections = ({ API, genreFilter }) => {
                     <span>{genreFilter} movies</span> 
                 </section>
 
-                <div className="sec-movies" ref={secMoviesRef} onMouseEnter={whereToHover}>
+                <div className="sec-movies" ref={secMoviesRef}>
                     {filtered.map(movie => {
                         return(
-                            <div className="movie-wrapper" ref={MOVIE}>
+                            <div className="movie-wrapper" onMouseEnter={whereToHover}>
                                 <div className="item">
                                     <img className="item-img" src={movie.thumbnail} alt={movie.title}/>
                                 </div>
 
-                                <div className="information-onHover" ref={movieHover}>
+                                <div className="information-onHover">
                                     <PlayPrime small={true}/> 
                                     <h3>{movie.title}</h3>
                                     <h6>{aboutTheMovie(movie)}</h6>
