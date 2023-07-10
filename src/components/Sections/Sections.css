@@ -52,10 +52,10 @@
 .item:hover{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    cursor: pointer;
     transform: scale(1.2);
     transition: 0.2s ease-in-out;
     z-index: 2;
-    cursor: pointer;
 }
 
 .item:hover + .information-onHover{

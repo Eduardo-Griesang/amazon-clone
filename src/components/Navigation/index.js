@@ -59,14 +59,12 @@ const Navigation = () => {
 
     function toggleSearch() {
         const nav = getComputedStyle(navUser.current)
-        const van = getComputedStyle(navUl.current)
+        const navU = getComputedStyle(navUl.current)
         
         const navTrim = parseFloat(nav.width.slice(0, -2))
-        const vanTrim = parseFloat(van.width.slice(0, -2))
+        const navUlTrim = parseFloat(navU.width.slice(0, -2))
 
-        const holeWidth = navTrim + vanTrim
-
-        console.log(holeWidth.toString())
+        const holeWidth = navTrim + navUlTrim
         
         const wrap = wrapper.current
 
