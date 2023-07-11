@@ -31,6 +31,7 @@ const HomePage = () => {
                 <Sections API={API} genreFilter={"Horror"} />
                 <Sections API={API} genreFilter={"Comedy"} />
                 <Sections API={API} genreFilter={"Superhero"} />
+                <Sections API={API} genreFilter={"Drama"} />
             </main>
         </section>
     )
