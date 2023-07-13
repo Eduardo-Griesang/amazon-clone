@@ -3,21 +3,22 @@ import './HomePage.css'
 import Navigation from '../../components/Navigation'
 import Carousel from '../../components/Carousel'
 import Sections from '../../components/Sections'
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
 
 const HomePage = () => {
 
     const [ API, setAPI] = useState([])
 
-    async function MoviesAPI() {
-        const allMovies = await fetch(`https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies-2020s.json`)
-        const allMoviesJSON = await allMovies.json()
-         
-        setAPI(allMoviesJSON)
-        return allMoviesJSON
-    }
-    
-    MoviesAPI()
+    /* nesse contexto é melhor usar o fetch normal com .then, porque usando async function o react fica fazendo requests infinitos e deixando a 
+    aplicação extremamente lenta */
+    useEffect(() => {
+        fetch(`https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies-2020s.json`, {
+            method : 'GET',
+        }).then((resp) => resp.json())
+            .then((movies) => setAPI(movies))
+
+    }, [])
 
     return(
         <section className='html'>

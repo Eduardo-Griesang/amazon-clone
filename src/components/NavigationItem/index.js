@@ -21,7 +21,7 @@ const NavigationItem = ( { active, title, dropdown, big, secTitle } ) => {
 
     return (
         <li>
-            <div className={`navigation-item-wrapper ${ac()}`}>
+            <div className={`navigation-item-wrapper ${ac}`}>
                 <span className='navigation-item'>{title}</span>
                 <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
             </div>
