@@ -23,7 +23,6 @@ const HomePage = () => {
     return(
         <section className='html'>
             <header>
-                <Navigation />
                 <Carousel />
             </header>
 
