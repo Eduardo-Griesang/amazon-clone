@@ -57,8 +57,10 @@ const Sections = ({ API, genreFilter }) => {
 
                 <div className="sec-movies" ref={secMoviesRef}>
                     {filtered.map(movie => {
+                        const element = [movie] 
+
                         return(
-                            <NavLink to={{pathname:'/MovieClicked', state:{movie}}} className="movie-wrapper" onMouseEnter={whereToHover}>
+                            <NavLink to={{pathname:'/MovieClicked', state:{element:{element}}}} className="movie-wrapper" onMouseEnter={whereToHover}>
                                 <div className="item">
                                     <img className="item-img" src={movie.thumbnail} alt={movie.title}/>
                                 </div>

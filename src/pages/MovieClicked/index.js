@@ -1,13 +1,13 @@
 import './MovieClicked.css'
 
-const MovieClicked = ({movie}) => {
+const MovieClicked = ({element}) => {
 
-    const movieProp = movie.state
+    const elementProp = element.state[0]
 
-    console.log(movie)
+    console.log(element)
     return (
         <div>
-            <h1>{movieProp.title}</h1>
+            <h1>{elementProp.title}</h1>
         </div>
     )
 }
