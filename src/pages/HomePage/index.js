@@ -1,6 +1,5 @@
 import './HomePage.css'
 
-import Navigation from '../../components/Navigation'
 import Carousel from '../../components/Carousel'
 import Sections from '../../components/Sections'
 

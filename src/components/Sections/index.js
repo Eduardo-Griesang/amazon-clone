@@ -4,18 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 import PlayPrime from "../PlayPrime";
+import { NavLink } from "react-router-dom";
 
 const Sections = ({ API, genreFilter }) => {
 
     const secMoviesRef = useRef()
 
-    function scrollRight (e) {
+    function scrollRight () {
         /* pega o pai dos elementos a serem escrolados, e adiciona o "offsetWidth"(tamanho da tela visivel) a posição do scroll,
         lembrando que o elemento precisa ter "overflow-x= auto" no css para funcionar */
         secMoviesRef.current.scrollLeft += secMoviesRef.current.offsetWidth
     }
 
-    function scrollLeft (e) {
+    function scrollLeft () {
         /* pega o pai dos elementos a serem escrolados, e reduz o "offsetWidth"(tamanho da tela visivel) a posição do scroll,
         lembrando que o elemento precisa ter "overflow-x= auto" no css para funcionar */
         secMoviesRef.current.scrollLeft -= secMoviesRef.current.offsetWidth
@@ -44,7 +45,7 @@ const Sections = ({ API, genreFilter }) => {
         /* adiciona o calculo a posição "left" do 'information-onHover' */
         e.target.parentNode.lastChild.style.left = `${calc}px`
     }
-    
+
     return(
         <section className="sec">
             <div className="sec-title">
@@ -57,7 +58,7 @@ const Sections = ({ API, genreFilter }) => {
                 <div className="sec-movies" ref={secMoviesRef}>
                     {filtered.map(movie => {
                         return(
-                            <div className="movie-wrapper" onMouseEnter={whereToHover}>
+                            <NavLink to={{pathname:'/MovieClicked', state:{movie}}} className="movie-wrapper" onMouseEnter={whereToHover}>
                                 <div className="item">
                                     <img className="item-img" src={movie.thumbnail} alt={movie.title}/>
                                 </div>
@@ -67,7 +68,7 @@ const Sections = ({ API, genreFilter }) => {
                                     <h3>{movie.title}</h3>
                                     <h6>{aboutTheMovie(movie)}</h6>
                                 </div>
-                            </div>
+                            </NavLink>
                         )
                     })}
                 </div>

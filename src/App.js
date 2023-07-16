@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/HomePage';
-import MovieClicked from './components/MovieClicked'
+import MovieClicked from './pages/MovieClicked'
 import Navigation from './components/Navigation';
 
 function App() {
