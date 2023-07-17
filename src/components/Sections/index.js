@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
 import PlayPrime from "../PlayPrime";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Sections = ({ API, genreFilter }) => {
 
@@ -60,7 +60,7 @@ const Sections = ({ API, genreFilter }) => {
                         const element = [movie] 
 
                         return(
-                            <NavLink to={{pathname:'/MovieClicked', state:{element:{element}}}} className="movie-wrapper" onMouseEnter={whereToHover}>
+                            <Link to={'/MovieClicked'} state={{movie:element}} className="movie-wrapper" onMouseEnter={whereToHover}>
                                 <div className="item">
                                     <img className="item-img" src={movie.thumbnail} alt={movie.title}/>
                                 </div>
@@ -70,7 +70,7 @@ const Sections = ({ API, genreFilter }) => {
                                     <h3>{movie.title}</h3>
                                     <h6>{aboutTheMovie(movie)}</h6>
                                 </div>
-                            </NavLink>
+                            </Link>
                         )
                     })}
                 </div>
