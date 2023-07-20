@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import MovieClicked from './pages/MovieClicked'
 import Navigation from './components/Navigation';
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path='/MovieClicked' element={<MovieClicked />}/>
         <Route path='*' element={<h1>404 NOT FOUND</h1>} />
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }

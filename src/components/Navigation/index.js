@@ -5,6 +5,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 import NavigationItem from '../NavigationItem'
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => {
 
@@ -85,7 +86,9 @@ const Navigation = () => {
         <nav className='navigation'>
             
             <ul className='navigation-ul' ref={navUl}>
-                <img src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
+                <Link to={'/'}>
+                    <img className='prime-img' src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
+                </Link>
 
                 <NavigationItem active={true} title={"Home"} dropdown={home} />
 

@@ -4,3 +4,7 @@
     background: var(--background);
     overflow-x: hidden;
 }
+
+main {
+    padding-bottom: 15em;
+}

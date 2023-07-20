@@ -35,9 +35,8 @@
     background-color: var(--dark-gray);
 }
 
-.navigation-ul img{
-    margin-right: 3em;
-    width: 15%;
+.prime-img{
+    width: 45%;
 }
 
 .navigation-ul li span{
