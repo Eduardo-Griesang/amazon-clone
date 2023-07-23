@@ -2,15 +2,9 @@ import './NavigationItem.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from 'react-router-dom'
 
-const NavigationItem = ( { active, title, dropdown, big, secTitle } ) => {
-
-    function ac () {
-        if (active){
-            const showActive = 'active'
-            return showActive
-        }
-    }
+const NavigationItem = ( { title, dropdown, big, secTitle, whereToLink } ) => {
 
     function bigger () {
         if(big) {
@@ -21,9 +15,15 @@ const NavigationItem = ( { active, title, dropdown, big, secTitle } ) => {
 
     return (
         <li>
-            <div className={`navigation-item-wrapper ${ac}`}>
-                <span className='navigation-item'>{title}</span>
-                <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
+            <div className={`navigation-item-wrapper`}>
+                <NavLink className={({Active, NotActive})=>
+                        NotActive ? "navigation-item" : Active ? "navigation-item active" : "navigation-item" 
+                    } to={whereToLink}>
+
+                    <span>{title}</span>
+                    <FontAwesomeIcon icon={faChevronDown} className='icon-down' />
+                    
+                </NavLink>
             </div>
             <ul className={`navigation-item-Dropdown ${bigger()}`}>
                 {bigger() ?

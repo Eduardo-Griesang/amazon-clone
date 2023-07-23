@@ -4,6 +4,21 @@
     transition: 0.2s;
 }
 
+.navigation-item{
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.active{
+    color: var(--white);
+}
+
+/* DROPDOWNS */
+
+.navigation-item-wrapper{
+    padding: 1em;
+}
+
 .navigation-item-wrapper:hover{
     .icon-down{
         rotate: 180deg;
@@ -11,12 +26,9 @@
         padding-right: 0.7em;
         transition: 0.2s;
     }
-}
-
-/* DROPDOWNS */
-
-.navigation-item-wrapper{
-    padding: 1em;
+    .navigation-item{
+        color: var(--white);
+    }
 }
 
 .navigation-item-Dropdown{
@@ -42,6 +54,10 @@
 
 .navigation-item-Dropdown:hover{
     display: flex;
+}
+/* tentativa de manter a cor branca quando ocorre o hover no dropdown, não funcionou  */
+.navigation-item-Dropdown ~ .navigation-item-wrapper .navigation-item{
+    color: var(--white);
 }
 
 .navigation-item-Dropdown li{

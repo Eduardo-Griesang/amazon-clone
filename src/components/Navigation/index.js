@@ -90,7 +90,7 @@ const Navigation = () => {
                     <img className='prime-img' src='https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png' alt='Amazom Prime Video Logo' />
                 </Link>
 
-                <NavigationItem active={true} title={"Home"} dropdown={home} />
+                <NavigationItem active={true} title={"Home"} dropdown={home} whereToLink={'/'} />
 
                 <NavigationItem title={"Store"} dropdown={store} />
 
