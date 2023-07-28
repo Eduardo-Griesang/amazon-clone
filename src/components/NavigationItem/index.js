@@ -14,7 +14,7 @@ const NavigationItem = ( { title, dropdown, big, secTitle, whereToLink } ) => {
     }
 
     return (
-        <li>
+        <li className='navigation-item-li'>
             <div className={`navigation-item-wrapper`}>
                 <NavLink className={({Active, NotActive})=>
                         NotActive ? "navigation-item" : Active ? "navigation-item active" : "navigation-item" 

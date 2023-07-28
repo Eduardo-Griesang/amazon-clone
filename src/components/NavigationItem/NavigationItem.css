@@ -19,7 +19,7 @@
     padding: 1em;
 }
 
-.navigation-item-wrapper:hover{
+.navigation-item-li:hover{
     .icon-down{
         rotate: 180deg;
         padding-left: 0.7em;
