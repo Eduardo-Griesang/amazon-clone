@@ -58,7 +58,7 @@ const Navigation = () => {
         "Learn more"
     ]
 
-    function toggleSearch() {
+    function toggleSearch () {
         const nav = getComputedStyle(navUser.current)
         const navU = getComputedStyle(navUl.current)
         
@@ -82,6 +82,10 @@ const Navigation = () => {
         }
     }
 
+    function searchMovie (e) {
+        console.log(e)
+    }
+
     return (
         <nav className='navigation'>
             
@@ -99,14 +103,14 @@ const Navigation = () => {
                 <NavigationItem title={"My stuff"} dropdown={myStuff} />
             </ul>
 
-            <section className='navigation-user' onClick={toggleSearch} ref={navUser} >
-                <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#aaa",}} className='navigation-user-search' />
+            <section className='navigation-user'>
+                <FontAwesomeIcon icon={faMagnifyingGlass} onClick={toggleSearch} ref={navUser}  style={{color: "#aaa",}} className='navigation-user-search' />
 
                 <div className='navigation-user-search-wrapper' ref={wrapper}>
                     <form className='navigation-user-search-bar'>
                         
                         <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#aaa",}} className='navigation-user-inside-search' />
-                        <input type='search' placeholder='Search' />
+                        <input type='search' placeholder='Search' onChange={searchMovie} />
                     
                     </form>
                 </div>
